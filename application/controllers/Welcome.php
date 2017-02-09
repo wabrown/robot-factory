@@ -23,7 +23,9 @@ class Welcome extends Application
 	 */
 	public function index()
 	{
+
 		$this->data['pagebody'] = 'home_page';
+
 		$this->render(); 
 	}
 
