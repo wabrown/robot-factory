@@ -53,3 +53,15 @@ p.footer {
 	border: 1px solid #D0D0D0;
 	box-shadow: 0 0 8px #D0D0D0;
 }
+
+.oneimage {
+    padding:5em; width:100px; text-align:center;
+}
+
+.imageSize {
+    padding:5em; width:80px; text-align:center;
+}
+
+.centered {
+    vertical-align:middle;
+}

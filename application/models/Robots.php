@@ -114,5 +114,4 @@ class Robots extends CI_Model {
         }
         return null;
     }
-
 }

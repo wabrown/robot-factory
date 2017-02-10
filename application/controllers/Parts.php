@@ -22,18 +22,35 @@ class Parts extends Application{
 	{
 		$this->data['pagebody'] = 'parts';
                 
-                $source = $this->robots->getAllParts();
-                $robots = array ();
+                $allParts = $this->robots->getAllParts();
                 
-                foreach($source as $record)
+                foreach ($allParts as $part){
+                    $cells[] = $this->parser->parse('_cell', (array) $part, true);
+                }
+                
+                $this->load->library('table');
+                
+                $robots = array (
+                  'table_open' => '<table class="gallery table-bordered container-fluid">',
+                  'cell_start' => '<td class="oneimage">',
+                  'cell_alt_start' => '<td class="oneimage">'
+                );
+                
+                $this->table->set_template($robots);
+                
+                $rows = $this->table->make_columns($cells, 3);
+                $this->data['parts_table'] = $this->table->generate($rows); 
+                
+                
+                /*
+                foreach($allParts as $record)
                 {
                     $robots[] = array ('fileName' => $record['fileName'], 
                                        'name' => $record['name'], 
                                        'href' => $record['fileName']);
-                }
+                }*/
                 
-                $this->data['robots'] = $robots;
-                
+                $this->data['robots'] = 'parts';
 		$this->render(); 
 	}
 }
