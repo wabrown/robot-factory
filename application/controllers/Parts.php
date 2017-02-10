@@ -53,4 +53,17 @@ class Parts extends Application{
                 $this->data['robots'] = 'parts';
 		$this->render(); 
 	}
+        public function getone($id) {
+        
+                // loads justone
+                $this->data['pagebody'] = 'justone';
+
+                $record = $this->robots->getPart($id);
+
+                // merge the records to data array
+                $this->data = array_merge($this->data, $record);
+
+                $this->render();
+        }        
+        
 }
