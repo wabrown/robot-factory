@@ -13,9 +13,27 @@
  */
 class Parts extends Application{
     
+	function __construct()
+	{
+		parent::__construct();
+	}
+        
 	public function index()
 	{
 		$this->data['pagebody'] = 'parts';
+                
+                $source = $this->robots->getAllParts();
+                $robots = array ();
+                
+                foreach($source as $record)
+                {
+                    $robots[] = array ('fileName' => $record['fileName'], 
+                                       'name' => $record['name'], 
+                                       'href' => $record['fileName']);
+                }
+                
+                $this->data['robots'] = $robots;
+                
 		$this->render(); 
 	}
 }
