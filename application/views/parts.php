@@ -3,3 +3,5 @@
 <div class="content centered">
     {parts_table}
 </div>
+
+{robots}
