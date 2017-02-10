@@ -1,14 +1,5 @@
-<h1>THIS IS PART PAGE</h1>
 
-<div id="body">
-	<p>THIS IS PART PAGE</p>
-<div class="row">
-    {robots}
-    <div class="span4">
-        <a href="">
-            <img src="/assets/images/parts/{fileName}" title="{name}"/>
-        </a>
-    </div>
-    {/robots}
-</div>
+<h1>ROBOT PARTS</h1> 
+<div class="content centered">
+    {parts_table}
 </div>
