@@ -22,3 +22,19 @@ Release Date: Feb 07, 2017
  - images 
   - bots, parts (Jake)
 
+# *Version 0.12*
+Release Date: Feb 09, 2017
+
+### Updated Components 
+- Config
+  -- Edited autoload.php, config.php (Jake)
+- Controllers
+  -- Edited Parts class (Jake)
+- Models
+  -- Added Robots.php - created a mock DB (Jake)
+- View 
+  -- Edited parts.php (Jake)
+  -- Deleted temp.php (Jake)
+- assets
+ -- images -- Added panda, umbrella (Jake)
+
