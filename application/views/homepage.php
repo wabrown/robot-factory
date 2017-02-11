@@ -1,17 +1,13 @@
-<!DOCTYPE html>
+<div class="row">
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+'numBots' => '19',
+            'numParts' => '40',
+            'monSpent' => '$40000',
+			'monEarned'=> '$100000')
 -->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        // put your code here
-        ?>
-    </body>
-</html>
+    {numbers}
+    <div class="span4" style="margin-left:40%; font-size:20pt">We have 
+		{numBots} robots with {numParts} parts, we spent {monSpent} and made
+			{monEarned}</div>
+    {/numbers}
+</div>
