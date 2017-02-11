@@ -3,9 +3,20 @@
  * Menu navbar, just an unordered list
  */
 ?>
-<ul class="nav">
-	<img style="float:left;"img src="assets/images/umbrellacorporation3.png"/>
+
+<div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand">
+            <img id="main_logo" src="assets/images/umbrellacorporation3.png"/>
+        </a>
+    </div>
     {menudata}
-    <li><a href="{link}"><b>{name}</b></a></li>
+    <ul class="nav navbar-nav">
+        <li>
+            <a href="{link}">            
+                <b>{name}</b>
+            </a>
+        </li>
+    </ul>
     {/menudata}
-</ul>
+</div>

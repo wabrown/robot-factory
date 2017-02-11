@@ -1,6 +1,6 @@
 <?php
 if (!defined('APPPATH'))
-	exit('No direct script access allowed');
+    exit('No direct script access allowed');
 /**
  * views/template.php
  *
@@ -18,28 +18,31 @@ if (!defined('APPPATH'))
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <link href="/assets/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-        <link rel="stylesheet" type="text/css" href="/assets/css/default.css"/>
+        <link href="/assets/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"/>     
+        <link href="/assets/css/default.css" rel="stylesheet" type="text/css" />
+
+        <script src="/assets/js/jquery-1.11.1.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>     
+        <script src="/assets/js/default.js"></script>             
 
     </head>
     <body>
-        <div id="header">
-
-        </div>
         <div id="container">
-            <div class="navbar">
-                <div class="navbar-inner">
+            <nav class="navbar navbar-inverse bg-inverse">
+                <div class="navbar-inner y-centered" id="nav_links" >
                     {menubar} 
                 </div>
-            </div>  
-            <div id="content">
+            </nav>  
+            <div class="container-fluid">
                 {content}
             </div>	
-            <div id="footer" class="span12">
-                Copyright &copy; 2017,  <a href="mailto:someone@somewhere.com">Me</a>.
-            </div>
         </div>
-        <script src="/assets/js/jquery-1.11.1.min.js"></script>
-        <script src="/assets/js/bootstrap.min.js"></script>
+
+        <div class="panel-footer" id="footer">
+            Copyright &copy; 2017,  
+            <a href="mailto:someone@somewhere.com">Team-Strawberry</a>
+        </div>        
+
     </body>
 </html>
 

@@ -54,5 +54,10 @@ Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdo
 
 ### *v.016* (Feb 11, 2017)
 - Overhaul formats and file names (Jake)
+- Reformatted readme, changelog (Jake)
+
+### *v.017* (Feb 11, 2017)
+- Redesign and applied bootstrap (Jake)
+- Applied Allman code style (Jake)
 
 

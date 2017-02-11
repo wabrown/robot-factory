@@ -34,15 +34,16 @@ class Parts extends Application
 
         $this->load->library('table');
 
-        $robots = array(
-            'table_open' => '<table class="gallery table-bordered container-fluid">',
-            'cell_start' => '<td class="oneimage">',
-            'cell_alt_start' => '<td class="oneimage">'
+        $robot_array = array(
+            'table_open' => '<table class="table-bordered">',
+            'heading_cell_start' => '<th class="text-danger header-size">',
         );
 
-        $this->table->set_template($robots);
+        $this->table->set_heading('Head Parts', 'Torso Parts', 'Leg Parts');
+        $this->table->set_template($robot_array);
 
         $rows = $this->table->make_columns($cells, 3);
+
         $this->data['parts_table'] = $this->table->generate($rows);
 
         $this->render();
@@ -50,7 +51,7 @@ class Parts extends Application
 
     public function getone($id)
     {
-        // loads justone
+        // load a page for details
         $this->data['pagebody'] = 'singlepage';
 
         $record = $this->partsdata->getPart($id);

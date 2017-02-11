@@ -1,7 +1,9 @@
+<!-- Parts page. Displays Contents -->
 
-<h1>ROBOT PARTS</h1> 
-<div class="content centered">
-    {parts_table}
+<div class="container-fluid">
+    <h2>Robot Parts</h2> 
+    </br>
+    <div class="container-fluid span">        
+        {parts_table}
+    </div>
 </div>
-
-{robots}

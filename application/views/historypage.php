@@ -1,26 +1,25 @@
-<h1>THIS IS HISTORY PAGE</h1>
+<!-- History page. Displays Contents -->
 
-<div id="body">
-	<p>THIS IS HISTORY PAGE</p>
-        
-<div class="row">
-    
-    <table style="border: 1px solid white;">
+<div class="container-fluid">
+    <h2>History</h2>
+
+    <table class="table table-bordered">
         <tr>
-            <th>model</th>
-            <th>transaction</th>
-            <th>price</th>
-            <th>date</th>
-            <th>time</th>    
+            <th>Model</th>
+            <th>Transaction</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Time</th>    
         </tr>
-    {transaction}
-<tr>
-    <td>{model}</td>
-    <td>{transaction}</td>
-    <td>{price}</td>
-    <td>{date}</td>
-    <td>{time}</td>
-</tr>
-{/transaction}
+        {transaction}
+        <tr>
+            <td>{model}</td>
+            <td>{transaction}</td>
+            <td>{price}</td>
+            <td>{date}</td>
+            <td>{time}</td>
+        </tr>
+        {/transaction}
     </table>
+
 </div>

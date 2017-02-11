@@ -2,29 +2,46 @@
 #Robot-factory
 
 
+
 ###Team name 
-> Team-Strawberry
+##### Team-Strawberry
+
 ###Project name
-> Robot-factory   
+##### Robot-factory   
+
 
 
 ###Group Members        
 
 - Jake Kim (C)
-- Karandip Parmar
-- Micheal Park
+- Karan Parmar
+- Michael Park
 - Nick Nelson
 - William Brown       
 
 
+
 ###Coding Conventions
--Coding Style - K&R (Netbeans default)
+- Coding Style - Allman
+
 
 
 ###Project Folders
-'''
+```
 - /application    
-- /assets         CSS, javascript, images
-'''
+- /assets
+> CSS, javascript, images
+```
 
+
+
+###Distribution of work       
+
+| Name | Work |
+|---|---|
+| Jake | Overview / Part page |
+| Karan | History page |
+| Michael | About / History page |
+| Nick | Assembly page |
+| William | Home page / Navbar |
 
