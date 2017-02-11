@@ -4,57 +4,40 @@ Team membership:  Jake (Captain) & Karan & Michael & Nick & William
 Team conventions: Allman notation, markdown for changelog  
 Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
 
-# *Version 0.1*
-Release Date: Feb 07, 2017
-
+# *v0.1* (Feb 07, 2017)
 - Created changelog, initial commit
 
-# *Version 0.11*
-Release Date: Feb 07, 2017
+# *v0.11 (Feb 07, 2017)
+- Added Parts class (Jake)
+- Added parts.php (Jake)
+- Added temp.php (Jake)
+- Added images of bots, parts (Jake)
 
-### Updated Components 
-- Controllers
-  - Added Parts class (Jake)
-- View 
-  - Added parts.php (Jake)
-  - Added temp.php (Jake)
-- assets
- - images 
-  - bots, parts (Jake)
+# *v0.12* (Feb 09, 2017)
+- Edited autoload.php, config.php (Jake)
+- Edited Parts class (Jake)
+- Added Robots.php - created a mock DB (Jake)
+- Edited parts.php (Jake)
+- Deleted temp.php (Jake)
+- images - Added panda, umbrella (Jake)
 
-# *Version 0.12*
-Release Date: Feb 09, 2017
+# *v0.13* (Feb 09, 2017)
+- Added About class (Michael)
+- Added about.php (Michael)
+- Added Assembly class (Nick)
+- Added assembly.php (Nick)
+- Edited autoload.php, config.php (Jake)
+- Edited Parts class (Jake)
+- Added Robots.php - created a mock DB (Jake)
+- Edited parts.php (Jake)
+- Deleted temp.php (Jake)
+-- images -- Added panda, umbrella (Jake)
+- Added About class (Michael)
+- Added about.php (Michael)
 
-### Updated Components 
-- Config
-  -- Edited autoload.php, config.php (Jake)
-- Controllers
-  -- Edited Parts class (Jake)
-- Models
-  -- Added Robots.php - created a mock DB (Jake)
-- View 
-  -- Edited parts.php (Jake)
-  -- Deleted temp.php (Jake)
-- assets
- -- images -- Added panda, umbrella (Jake)
-
-# *Version 0.13*
-Release Date: Feb 09, 2017
-
-### Updated Components 
-- Controllers
-  -- Added About class (Michael)
-- View 
-  -- Added about.php (Michael)
-
-# *Version 0.14*
-Release Date: Feb 09, 2017
-
-### Updated Components 
-- Controllers
-  -- Edited Parts class - link to justone (Jake)
-- View 
-  -- Added _cell.php (Jake)
-  -- Added justone.php (Jake)
+# *v0.14* (Feb 09, 2017)
+- Edited Parts class - link to justone (Jake)
+- Added _cell.php (Jake)
+- Added justone.php (Jake)
 
 

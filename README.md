@@ -1,21 +1,27 @@
-## CodeIgniter3.1-starter3
+#################
+Robot-factory
+#################
 
-This project can be used as a starter for a webapp built with CodeIgniter 3.1.
+sTeam name    : Team-Strawberry
+Project name : Robot-factory   
 
-This starter builds on [CodeIgniter3.1-starter2](https://github.com/jedi-academy/CodeIgniter3.1-starter2),
-adding a base model with CRUD methods.
 
-**controllers/Welcome.php** has been modified to set the name of the desired
-view file as a *data* parameter, and to then invoke the inherited *render*
-method to trigger presentation.
+##Group Members        
 
-A view template is provided. The CSS has been extracted to an appropriate file
-in the public folder. Styling could be improved by using a CSS framework, like
-Bootstrap.
+Jake Kim (C)
+Karandip Parmar
+Micheal Park
+Nick Nelson
+William Brown       
 
-The **application/config/autoload.php** configuration has been modified
-to preload the template parser library and the url helper.
 
-Configure your web server or virtual host so that your project's
-document root maps to this **public** folder inside your project.
+
+##Coding Conventions
+Coding Style - Allman
+
+
+##Project Folders
+/application    
+/assets         CSS, javascript, images
+
 
