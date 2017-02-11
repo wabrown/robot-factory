@@ -26,6 +26,10 @@ Release Date: Feb 07, 2017
 Release Date: Feb 09, 2017
 
 ### Updated Components 
+- Controllers
+  - Added Assembly class (Nick)
+- View 
+  - Added assembly.php (Nick)
 - Config
   -- Edited autoload.php, config.php (Jake)
 - Controllers
