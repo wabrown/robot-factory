@@ -37,7 +37,7 @@ Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdo
 - Added Robots.php - created a mock DB (Jake)
 - Edited parts.php (Jake)
 - Deleted temp.php (Jake)
--- images -- Added panda, umbrella (Jake)
+- Added panda, umbrella images (Jake)
 - Added About class (Michael)
 - Added about.php (Michael)
 
