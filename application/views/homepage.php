@@ -1,13 +1,24 @@
-<div class="row">
-<!--
-'numBots' => '19',
-            'numParts' => '40',
-            'monSpent' => '$40000',
-			'monEarned'=> '$100000')
--->
-    {numbers}
-    <div class="span4" style="margin-left:40%; font-size:20pt">We have 
-		{numBots} robots with {numParts} parts, we spent {monSpent} and made
-			{monEarned}</div>
-    {/numbers}
+<!-- Home page. Displays Contents -->
+
+<div class="continer-fluid">
+    <h1>Umbrella Corporation</h1>        
+    <h2>Robot Factory</h2> 
+    <div class="text-danger span"> </br> 
+        <h3>Strawberry Division</h3></div>
+    <table class="table table-bordered">
+        <tr>
+            <th>Parts on hand</th>
+            <th>Assembled bots</th>
+            <th>Spent</th>
+            <th>Earned</th>
+        </tr>
+        {numbers}
+        <tr>
+            <td>{numParts}</td>
+            <td>{numBots}</td>
+            <td>{monSpent}</td>
+            <td>{monEarned}</td>               
+        </tr>
+        {/numbers}
+    </table>
 </div>

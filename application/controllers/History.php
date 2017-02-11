@@ -11,29 +11,31 @@
  *
  * @author Michael
  */
-class History extends Application{
-    
+class History extends Application
+{
+
     function __construct()
-	{
-		parent::__construct();
-	}
-    
+    {
+        parent::__construct();
+    }
+
     public function index()
-	{
-		$this->data['pagebody'] = 'historyview';
-                
-                $source = $this->transaction->getAllHistories();
-                $history = array ();
-                
-                foreach($source as $record)
-                {
-                    $history[] = array ('model' => $record['model'], 
-                                       'transaction' => $record['transaction'], 
-                                       'price' => $record['price'],
-                                       'date' => $record['date'],
-                                       'time' => $record['time']);
-                }
-                $this->data['transaction'] = $history;
-                $this->render();
-	}
+    {
+        $this->data['pagebody'] = 'historypage';
+
+        $source = $this->historydata->getAllHistories();
+        $history = array();
+
+        foreach ($source as $record)
+        {
+            $history[] = array('model' => $record['model'],
+                'transaction' => $record['transaction'],
+                'price' => $record['price'],
+                'date' => $record['date'],
+                'time' => $record['time']);
+        }
+        $this->data['transaction'] = $history;
+        $this->render();
+    }
+
 }

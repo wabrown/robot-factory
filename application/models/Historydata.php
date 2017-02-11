@@ -11,10 +11,10 @@
  *
  * @author Michael
  */
-class Transaction extends CI_Model {
-    
+class Historydata extends CI_Model
+{
+
     var $data = array(
-        
         array('model' => 'robot A',
             'transaction' => 'purchased',
             'price' => '$100',
@@ -45,72 +45,87 @@ class Transaction extends CI_Model {
             'price' => '$50',
             'date' => '01/15/2017',
             'time' => '23:19:51')
-        );
-    
+    );
+    var $summary = array(
+        array('numBots' => '19',
+            'numParts' => '40',
+            'monSpent' => '$40000',
+            'monEarned' => '$100000'),
+    );
+
     // Constructor    
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
-    
+
+    public function getAllSummary()
+    {
+        return $this->summary;
+    }
+
     // retrieve all of transactions
-    public function getAllHistories() {
+    public function getAllHistories()
+    {
         return $this->data;
     }
-    
-    // retrieve a single bot
-    public function getModel($which) {
+
+    // retrieve a single model
+    public function getModel($which)
+    {
         // iterate over the data until we find the one we want
         foreach ($this->data as $record)
-            if($record['model'] == $which)
+            if ($record['model'] == $which)
                 return $record;
         return null;
     }
-    
-    // retrieve a single bot
-    public function getTransaction($which) {
+
+    // retrieve a single transaction
+    public function getTransaction($which)
+    {
         // iterate over the data until we find the one we want
         foreach ($this->data as $record)
-            if($record['transaction'] == $which)
-            
+            if ($record['transaction'] == $which)
                 return $record;
-            
-        
+
+
         return null;
     }
-    
-    // retrieve a single bot
-    public function getPrice($which) {
+
+    // retrieve a single price
+    public function getPrice($which)
+    {
         // iterate over the data until we find the one we want
         foreach ($this->data as $record)
-            if($record['price'] == $which)
-            
+            if ($record['price'] == $which)
                 return $record;
-            
-        
+
+
         return null;
     }
-    
+
     // retrieve a single bot
-    public function getDate($which) {
+    public function getDate($which)
+    {
         // iterate over the data until we find the one we want
         foreach ($this->data as $record)
-            if($record['date'] == $which)
-            
+            if ($record['date'] == $which)
                 return $record;
-            
-        
+
+
         return null;
     }
-    
-    // retrieve a single bot
-    public function getTime($which) {
+
+    // retrieve a single time
+    public function getTime($which)
+    {
         // iterate over the data until we find the one we want
         foreach ($this->data as $record)
-            if($record['time'] == $which)
-            
+            if ($record['time'] == $which)
                 return $record;
-            
-        
+
+
         return null;
     }
+
 }
