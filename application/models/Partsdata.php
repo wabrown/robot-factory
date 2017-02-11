@@ -7,36 +7,14 @@
  */
 
 /**
- * Description of Robots
+ * Description of Parts
  *
  * @author Jake
  */
-class Robots extends CI_Model {
-    
-    var $bots = array(
-        
-       array('id' => '19',
-            'name' => 'robot A',
-            'fileName' => 'a.jpg'),
-        array('id' => '20',
-            'name' => 'robot B',
-            'fileName' => 'b.jpg'),
-        array('id' => '21',
-            'name' => 'robot C',
-            'fileName' => 'c.jpg'),
-        array('id' => '22',
-            'name' => 'robot M',
-            'fileName' => 'm.jpg'),
-        array('id' => '23',
-            'name' => 'robot R',
-            'fileName' => 'r.jpg'),
-        array('id' => '24',
-            'name' => 'robot W',
-            'fileName' => 'w.jpg')
-     );
-    
-    var $parts = array(
+class Partsdata extends CI_Model
+{
 
+    var $data = array(
         array('id' => '1',
             'name' => 'part A-1',
             'fileName' => 'a1.jpeg',
@@ -60,7 +38,7 @@ class Robots extends CI_Model {
         array('id' => '6',
             'name' => 'part B-3',
             'fileName' => 'b3.jpeg',
-            'href' => '/parts/6'),        
+            'href' => '/parts/6'),
         array('id' => '7',
             'name' => 'part C-1',
             'fileName' => 'c1.jpeg',
@@ -85,51 +63,56 @@ class Robots extends CI_Model {
             'name' => 'part M-3',
             'fileName' => 'm3.jpeg',
             'href' => '/parts/12'),
-         array('id' => '13',
+        array('id' => '13',
             'name' => 'part R-1',
             'fileName' => 'r1.jpeg',
-             'href' => '/parts/13'),
-         array('id' => '14',
+            'href' => '/parts/13'),
+        array('id' => '14',
             'name' => 'part R-2',
             'fileName' => 'r2.jpeg',
-             'href' => '/parts/14'),
-         array('id' => '15',
+            'href' => '/parts/14'),
+        array('id' => '15',
             'name' => 'part R-3',
             'fileName' => 'r3.jpeg',
-             'href' => '/parts/15'),
-         array('id' => '16',
+            'href' => '/parts/15'),
+        array('id' => '16',
             'name' => 'part W-1',
             'fileName' => 'w1.jpeg',
-             'href' => '/parts/16'),
-         array('id' => '17',
+            'href' => '/parts/16'),
+        array('id' => '17',
             'name' => 'part W-2',
             'fileName' => 'w2.jpeg',
-             'href' => '/parts/17'),
-         array('id' => '18',
+            'href' => '/parts/17'),
+        array('id' => '18',
             'name' => 'part W-3',
             'fileName' => 'w3.jpeg',
-             'href' => '/parts/18'),       
-    );    
+            'href' => '/parts/18'),
+    );
 
     // Constructor    
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
 
     // retrieve all of the parts
-    public function getAllParts() {
-        return $this->parts;
+    public function getAllParts()
+    {
+        return $this->data;
     }
 
-    // retrieve a single bot
-    public function getPart($which) {
+    // retrieve a single part
+    public function getPart($which)
+    {
         // iterate over the data until we find the one we want
-        foreach ($this->parts as $record){
-            if($record['id'] == $which)
+        foreach ($this->data as $record)
+        {
+            if ($record['id'] == $which)
             {
                 return $record;
             }
         }
         return null;
     }
+
 }

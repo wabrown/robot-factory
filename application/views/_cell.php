@@ -13,6 +13,6 @@
  */
 ?>
 
-<a href="{href}" data-lighbox="gallery">
+<a href="{href}">
     <img src="/assets/images/parts/{fileName}" style="width:200px;" title="{name}"/>
 </a>
