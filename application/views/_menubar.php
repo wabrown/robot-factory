@@ -7,7 +7,7 @@
 <div class="container-fluid">
     <div class="navbar-header">
         <a class="navbar-brand">
-            <img id="main_logo" src="assets/images/umbrellacorporation3.png"/>
+            <img id="main_logo" src="assets/images/umbrellacorporation3.png" onerror="this.style.display='none'" alt=""/>
         </a>
     </div>
     {menudata}

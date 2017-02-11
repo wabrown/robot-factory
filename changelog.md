@@ -1,8 +1,8 @@
 #Change Log
 
-Team membership:  Jake (Captain) & Karan & Michael & Nick & William
-Team conventions: Allman notation, markdown for changelog  
-Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
+- Team membership:  Jake (Captain) & Karan & Michael & Nick & William
+- Team conventions: Allman notation, markdown for changelog  
+- Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
 
 ### *v0.1* (Feb 07, 2017)
 - Created changelog, initial commit
