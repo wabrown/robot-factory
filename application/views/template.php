@@ -17,30 +17,29 @@ if (!defined('APPPATH'))
         <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-		<link href="/assets/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
         <link rel="stylesheet" type="text/css" href="/assets/css/default.css"/>
-		 
-	</head>
-	<body>
-		<div id="header">
-			
-			
-		</div>
+
+    </head>
+    <body>
+        <div id="header">
+
+        </div>
         <div id="container">
-			<div class="navbar">
+            <div class="navbar">
                 <div class="navbar-inner">
                     {menubar} 
-				</div>
+                </div>
             </div>  
-			<div id="content">
+            <div id="content">
                 {content}
             </div>	
-			<div id="footer" class="span12">
+            <div id="footer" class="span12">
                 Copyright &copy; 2017,  <a href="mailto:someone@somewhere.com">Me</a>.
             </div>
         </div>
-		<script src="/assets/js/jquery-1.11.1.min.js"></script>
+        <script src="/assets/js/jquery-1.11.1.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>
-	</body>
+    </body>
 </html>
 

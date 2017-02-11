@@ -30,5 +30,35 @@ Release Date: Feb 09, 2017
   - Added Assembly class (Nick)
 - View 
   - Added assembly.php (Nick)
+- Config
+  -- Edited autoload.php, config.php (Jake)
+- Controllers
+  -- Edited Parts class (Jake)
+- Models
+  -- Added Robots.php - created a mock DB (Jake)
+- View 
+  -- Edited parts.php (Jake)
+  -- Deleted temp.php (Jake)
+- assets
+ -- images -- Added panda, umbrella (Jake)
+
+# *Version 0.13*
+Release Date: Feb 09, 2017
+
+### Updated Components 
+- Controllers
+  -- Added About class (Michael)
+- View 
+  -- Added about.php (Michael)
+
+# *Version 0.14*
+Release Date: Feb 09, 2017
+
+### Updated Components 
+- Controllers
+  -- Edited Parts class - link to justone (Jake)
+- View 
+  -- Added _cell.php (Jake)
+  -- Added justone.php (Jake)
 
 
