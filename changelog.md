@@ -9,6 +9,12 @@ Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdo
 
 # *v0.11 (Feb 07, 2017)
 - Added Parts class (Jake)
+- Edited template.php (William)
+- Added _menubar.php (William)
+- Added homepage.php(William)
+- Edited config.php(William)
+- Edited My_Controller(William)
+- Added Welcome.php(William)
 - Added parts.php (Jake)
 - Added temp.php (Jake)
 - Added images of bots, parts (Jake)
@@ -39,5 +45,11 @@ Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdo
 - Edited Parts class - link to justone (Jake)
 - Added _cell.php (Jake)
 - Added justone.php (Jake)
+
+# *v0.15* (Feb 10, 2017)
+- Added Home.php
+- Edited homepage.php(William)
+- Edited config.php(William)
+- Edited autoload.php
 
 
