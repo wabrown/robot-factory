@@ -24,7 +24,16 @@ class Welcome extends Application
 	public function index()
 	{
 
-		$this->data['pagebody'] = 'home_page';
+		$this->data['pagebody'] = 'homepage';
+		
+		// build the list of authors, to pass on to our view
+		$source = $this->home->all();
+		$info = array ();
+		foreach ($source as $record)
+		{
+			$info[] = array ('numBots' => $record['numBots'], 'numParts' => $record['numParts'], 'monSpent' => $record['monSpent'], 'monEarned' => $record['monEarned']);
+		}
+		$this->data['numbers'] = $info;
 
 		$this->render(); 
 	}

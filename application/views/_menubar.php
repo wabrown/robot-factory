@@ -4,7 +4,8 @@
  */
 ?>
 <ul class="nav">
+	<img style="float:left;"img src="assets/images/umbrellacorporation3.png"/>
     {menudata}
-    <li><a href="{link}">{name}</a></li>
+    <li><a href="{link}"><b>{name}</b></a></li>
     {/menudata}
 </ul>
