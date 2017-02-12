@@ -18,9 +18,10 @@
 }
 
 #main_logo{
+    position: relative;
     float: left;
     width: 40px;
-    margin:auto;
+    margin-top: -10px;
 }
 
 .cell_part_image{

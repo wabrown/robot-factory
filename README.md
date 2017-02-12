@@ -4,10 +4,10 @@
 
 
 ###Team name 
-##### Team-Strawberry
+#### Team-Strawberry
 
 ###Project name
-##### Robot-factory   
+#### Robot-factory   
 
 
 
