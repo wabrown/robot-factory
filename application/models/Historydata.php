@@ -9,11 +9,11 @@
 /**
  * Description of History
  *
- * @author Michael
+ * @author Michael/Karan
  */
-class Historydata extends CI_Model
-{
+class Historydata extends CI_Model {
 
+    // an array that holds fake data
     var $data = array(
         array('model' => 'robot A',
             'transaction' => 'purchased',
@@ -53,26 +53,23 @@ class Historydata extends CI_Model
             'monEarned' => '$100000'),
     );
 
-    // Constructor    
-    public function __construct()
-    {
+    // constructor    
+    public function __construct() {
         parent::__construct();
     }
 
-    public function getAllSummary()
-    {
+    // retrieves all of summary
+    public function getAllSummary() {
         return $this->summary;
     }
 
-    // retrieve all of transactions
-    public function getAllHistories()
-    {
+    // retrieves all of transactions
+    public function getAllHistories() {
         return $this->data;
     }
 
-    // retrieve a single model
-    public function getModel($which)
-    {
+    // retrieves a specific model
+    public function getModel($which) {
         // iterate over the data until we find the one we want
         foreach ($this->data as $record)
             if ($record['model'] == $which)
@@ -80,10 +77,9 @@ class Historydata extends CI_Model
         return null;
     }
 
-    // retrieve a single transaction
-    public function getTransaction($which)
-    {
-        // iterate over the data until we find the one we want
+    // retrieve a specific transaction
+    public function getTransaction($which) {
+        // iterate over data until a specific one is found
         foreach ($this->data as $record)
             if ($record['transaction'] == $which)
                 return $record;
@@ -92,10 +88,9 @@ class Historydata extends CI_Model
         return null;
     }
 
-    // retrieve a single price
-    public function getPrice($which)
-    {
-        // iterate over the data until we find the one we want
+    // retrieves a specific price
+    public function getPrice($which) {
+        // iterate over data until a specific one is found
         foreach ($this->data as $record)
             if ($record['price'] == $which)
                 return $record;
@@ -104,10 +99,9 @@ class Historydata extends CI_Model
         return null;
     }
 
-    // retrieve a single bot
-    public function getDate($which)
-    {
-        // iterate over the data until we find the one we want
+    // retrieves a specific date
+    public function getDate($which) {
+        // iterate over data until a specific one is found
         foreach ($this->data as $record)
             if ($record['date'] == $which)
                 return $record;
@@ -116,10 +110,9 @@ class Historydata extends CI_Model
         return null;
     }
 
-    // retrieve a single time
-    public function getTime($which)
-    {
-        // iterate over the data until we find the one we want
+    // retrieves a specific time
+    public function getTime($which) {
+        // iterate over data until a specific one is found
         foreach ($this->data as $record)
             if ($record['time'] == $which)
                 return $record;

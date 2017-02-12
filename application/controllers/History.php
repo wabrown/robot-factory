@@ -9,25 +9,25 @@
 /**
  * Description of History
  *
- * @author Michael
+ * @author Michael/Karan
  */
-class History extends Application
-{
+class History extends Application {
 
-    function __construct()
-    {
+    // construct function
+    function __construct() {
         parent::__construct();
     }
 
-    public function index()
-    {
+    // index function
+    public function index() {
         $this->data['pagebody'] = 'historypage';
 
+        // gets all the history data
         $source = $this->historydata->getAllHistories();
         $history = array();
 
-        foreach ($source as $record)
-        {
+        // a record with an array of five data
+        foreach ($source as $record) {
             $history[] = array('model' => $record['model'],
                 'transaction' => $record['transaction'],
                 'price' => $record['price'],
