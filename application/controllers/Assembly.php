@@ -14,13 +14,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * @author Nick
  */
-
 // A page for robot assembly, providing different parts to mix and match.
-class Assembly extends Application
-{
+class Assembly extends Application {
 
-    public function index()
-    {
+    public function index() {
         // Retrieves the file names for each part in the Robots model.
         $this->data['head1'] = $this->partsdata->getPart(1)['fileName'];
         $this->data['body1'] = $this->partsdata->getPart(2)['fileName'];

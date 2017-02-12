@@ -62,3 +62,6 @@
 
 ### *v.018* (Feb 11, 2017)
 - Added comments to all the history pages (Karan)
+
+### *v.019* (Feb 11, 2017)
+- Reformatted code (Karan)
