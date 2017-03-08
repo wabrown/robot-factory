@@ -15,7 +15,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Parts extends Application
 {
-
     function __construct()
     {
         parent::__construct();
@@ -61,5 +60,4 @@ class Parts extends Application
 
         $this->render();
     }
-
 }
