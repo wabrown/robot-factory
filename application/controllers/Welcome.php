@@ -2,11 +2,9 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends Application
-{
+class Welcome extends Application {
 
-    function __construct()
-    {
+    function __construct() {
         parent::__construct();
     }
 
@@ -22,16 +20,14 @@ class Welcome extends Application
      * map to /welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    public function index()
-    {
+    public function index() {
 
         $this->data['pagebody'] = 'homepage';
 
         // build the list of authors, to pass on to our view
         $source = $this->historydata->getAllSummary();
         $info = array();
-        foreach ($source as $record)
-        {
+        foreach ($source as $record) {
             $info[] = array('numBots' => $record['numBots'], 'numParts' => $record['numParts'], 'monSpent' => $record['monSpent'], 'monEarned' => $record['monEarned']);
         }
         $this->data['numbers'] = $info;

@@ -15,6 +15,7 @@ and open the template in the editor.
         <tr>
             <td>
                 <div >
+                    <!-- The initial robot displayed. -->
                     <img src="../assets/images/parts/{head1}" id="HeadImage" class="assembly_image"/> </br>
                     <img src="../assets/images/parts/{body1}" id="BodyImage" class="assembly_image"/> </br>
                     <img src="../assets/images/parts/{feet1}" id="FeetImage" class="assembly_image"/>
@@ -23,6 +24,7 @@ and open the template in the editor.
             <td class="container">
                 <h4> Head: </h4>
                 <div class="parts_container">
+                    <!-- Different robot heads to choose from, using the file name as id which is passed to a function to change to the selected part.  -->
                     <input type="radio" name="head" id="{head1}" onchange="changeHeadImage(this)" />A
                     <input type="radio" name="head" id="{head2}" onchange="changeHeadImage(this)" />B
                     <input type="radio" name="head" id="{head3}" onchange="changeHeadImage(this)" />C
@@ -32,6 +34,7 @@ and open the template in the editor.
                 </div>
                 <h4> Body: </h4>
                 <div class="parts_container">
+                    <!-- Different robot bodies to choose from, using the file name as id which is passed to a function to change to the selected part. -->
                     <input type="radio" name="body" id="{body1}" onchange="changeBodyImage(this)" />A
                     <input type="radio" name="body" id="{body2}" onchange="changeBodyImage(this)" />B
                     <input type="radio" name="body" id="{body3}" onchange="changeBodyImage(this)" />C
@@ -41,6 +44,7 @@ and open the template in the editor.
                 </div>
                 <h4> Feet: </h4>
                 <div class="parts_container">
+                    <!-- Different robot feet to choose from, using the file name as id which is passed to a function to change to the selected part.  -->
                     <input type="radio" name="feet" id="{feet1}" onchange="changeFeetImage(this)" />A
                     <input type="radio" name="feet" id="{feet2}" onchange="changeFeetImage(this)" />B
                     <input type="radio" name="feet" id="{feet3}" onchange="changeFeetImage(this)" />C
