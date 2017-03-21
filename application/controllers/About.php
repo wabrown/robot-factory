@@ -11,6 +11,8 @@
  *
  * @author Michael
  */
+
+
 class About extends Application {
 
     public function index() {
@@ -19,5 +21,4 @@ class About extends Application {
         $this->data['pagebody'] = 'aboutpage';
         $this->render();
     }
-
 }

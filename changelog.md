@@ -71,3 +71,6 @@
 
 ### *v.019* (Feb 11, 2017)
 - edited changelog (Michael)
+
+### *v.021* (March 21, 2017)
+- Add user roles (Jake)
