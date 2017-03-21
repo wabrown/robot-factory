@@ -60,4 +60,7 @@
 - Redesign and applied bootstrap (Jake)
 - Applied Allman code style (Jake)
 
+### *v.018* (March 21, 2017)
+- Add user roles (Jake)
+
 
