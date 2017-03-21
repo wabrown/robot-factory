@@ -3,9 +3,28 @@
  * Menu navbar, just an unordered list
  */
 ?>
-<ul class="nav">
-	<img style="float:left;"img src="assets/images/umbrellacorporation3.png"/>
+
+<div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand">
+            <img id="main_logo" src="assets/images/umbrellacorporation3.png" onerror="this.style.display='none'" alt=""/>
+        </a>
+    </div>
     {menudata}
-    <li><a href="{link}"><b>{name}</b></a></li>
+    <ul class="nav navbar-nav">
+        <li>
+            <a href="{link}">            
+                <b>{name}</b>
+            </a>
+        </li>
+    </ul>
     {/menudata}
-</ul>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">User Role<b class="caret"></b></a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                  <li><a href="/roles/actor/guest">Guest</a></li>
+                  <li><a href="/roles/actor/worker">Worker</a></li>
+                  <li><a href="/roles/actor/supervisor">Supervisor</a></li>
+                  <li><a href="/roles/actor/boss">Boss</a></li>
+      </ul>    
+</div>
