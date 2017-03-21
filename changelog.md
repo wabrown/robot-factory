@@ -62,5 +62,10 @@
 
 ### *v.018* (March 21, 2017)
 - Add user roles (Jake)
+- Add database for parts page (Jake) 
+  - (Config - autoload, constants)
+  - (Models - Partsdata)
+  - (Views - _cell)
+
 
 

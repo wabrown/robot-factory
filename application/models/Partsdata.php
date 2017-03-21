@@ -11,9 +11,9 @@
  *
  * @author Jake
  */
-class Partsdata extends CI_Model
+class Partsdata extends MY_Model
 {
-
+    
     var $data = array(
         array('id' => '1',
             'name' => 'part A-1',
@@ -196,17 +196,20 @@ class Partsdata extends CI_Model
             'fileName' => 'w3.jpeg',
             'href' => '/parts/18'),
     );
-
+     
+     
+    
+    
     // Constructor    
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct('partsdata', 'id');
     }
 
     // retrieve all of the parts
     public function getAllParts()
     {
-        return $this->data;
+        return $this->all();
     }
 
     // retrieve a single part

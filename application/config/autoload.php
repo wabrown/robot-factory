@@ -59,7 +59,7 @@ $autoload['packages'] = array();
   |
   |	$autoload['libraries'] = array('user_agent' => 'ua');
  */
-$autoload['libraries'] = array('parser');
+$autoload['libraries'] = array('parser', 'database', 'session');
 
 /*
   | -------------------------------------------------------------------
@@ -134,4 +134,4 @@ $autoload['language'] = array();
   |	$autoload['model'] = array('first_model' => 'first');
  */
 $autoload['model'] = array('robotsdata', 'partsdata', 'historydata');
-//$autoload['libraries'] = array('parser', 'database', 'parsedown', 'session');
+$autoload['database'] = array('partsdata', 'history');
