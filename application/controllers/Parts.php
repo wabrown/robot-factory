@@ -13,21 +13,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * @author Jake
  */
-class Parts extends Application
-{
-    function __construct()
-    {
+
+class Parts extends Application {
+
+    function __construct() {
         parent::__construct();
     }
 
-    public function index()
-    {
+    public function index() {
         $this->data['pagebody'] = 'partspage';
 
         $allParts = $this->partsdata->getAllParts();
 
-        foreach ($allParts as $part)
-        {
+        foreach ($allParts as $part) {
             $cells[] = $this->parser->parse('_cell', (array) $part, true);
         }
 
@@ -48,8 +46,7 @@ class Parts extends Application
         $this->render();
     }
 
-    public function getone($id)
-    {
+    public function getone($id) {
         // load a page for details
         $this->data['pagebody'] = 'singlepage';
 

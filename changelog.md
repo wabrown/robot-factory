@@ -60,7 +60,17 @@
 - Redesign and applied bootstrap (Jake)
 - Applied Allman code style (Jake)
 
-### *v.018* (March 21, 2017)
+### *v.018* (Feb 11, 2017)
+- Added comments to all the history pages (Karan)
+
+### *v.019* (Feb 11, 2017)
+- Reformatted code (Karan)
+
+### *v.020* (Feb 12, 2017)
+- Added comments to all the about page (Michael)
+
+### *v.019* (Feb 11, 2017)
+- edited changelog (Michael)
+
+### *v.021* (March 21, 2017)
 - Add user roles (Jake)
-
-
