@@ -11,8 +11,10 @@
  *
  * @author Jake
  */
+
 class Partsdata extends MY_Model
 {
+
     // Constructor    
     public function __construct()
     {
@@ -23,6 +25,7 @@ class Partsdata extends MY_Model
     public function get_all_parts()
     {
         return $this->all();
+
     }
 
     // retrieve a single part

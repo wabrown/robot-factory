@@ -13,10 +13,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * @author Jake
  */
-class Parts extends Application
-{
-    function __construct()
-    {
+
+class Parts extends Application {
+
+    function __construct() {
         parent::__construct();
     }
 
@@ -32,6 +32,7 @@ class Parts extends Application
         // Create each cell
         foreach ($allParts as $part)
         {
+
             $cells[] = $this->parser->parse('_cell', (array) $part, true);
             
         }
@@ -55,6 +56,7 @@ class Parts extends Application
     
     public function get_single_page($id)
     {
+
         // load a page for details
         $this->data['pagebody'] = 'singlepage';
 

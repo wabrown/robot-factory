@@ -11,8 +11,7 @@
  *
  * @author Jake
  */
-class Robotsdata extends CI_Model
-{
+class Robotsdata extends CI_Model {
 
     var $bots = array(
         array('id' => '19',
@@ -36,26 +35,21 @@ class Robotsdata extends CI_Model
     );
 
     // Constructor    
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct();
     }
 
     // retrieve all of bots
-    public function getAllBots()
-    {
+    public function getAllBots() {
         return $this->bots;
     }
 
     // retrieve a single bot
-    public function getBot($which)
-    {
+    public function getBot($which) {
 
         // iterate over the data until we find the one we want
-        foreach ($this->bots as $record)
-        {
-            if ($record['id'] == $which)
-            {
+        foreach ($this->bots as $record) {
+            if ($record['id'] == $which) {
                 return $record;
             }
         }
