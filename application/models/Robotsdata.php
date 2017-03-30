@@ -55,5 +55,24 @@ class Robotsdata extends CI_Model {
         }
         return null;
     }
-
+    
+    // Database 
+    // Use insert-post
+    public function saveBot() {
+        // id = previous record's plus 1?
+        $con = mysql_connect("localhost","root@localhost","");
+        mysql_select_db("factory", $con);
+        /*$bot_id = $record['id'];
+        $bot_head = $record['head'];
+        $bot_body = $record['body'];
+        $bot_legs = $record['legs'];*/
+        $query = "INSERT INTO assembledbots ('id', 'head', 'body', 'legs') VALUES (1, 'Poop', 'Peep', 'Boob')";
+        mysql_query($query);
+        mysql_close($con);
+    }
 }
+
+
+
+
+

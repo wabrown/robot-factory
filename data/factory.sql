@@ -26,8 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `ci_sessions`
 --
 
-DROP TABLE IF EXISTS `ci_sessions`;
-CREATE TABLE `ci_sessions` (
+CREATE TABLE IF NOT EXISTS `ci_sessions`(
   `id` varchar(128) NOT NULL,
   `ip_address` varchar(45) NOT NULL,
   `timestamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -52,73 +51,56 @@ ALTER TABLE `ci_sessions`
 
 
 --
--- Table structure for table `history`
+-- Table structure for table `historydata`
 --
 
-DROP TABLE IF EXISTS `history`;
-CREATE TABLE `history` (
-  `id` int(3) NOT NULL,
-  `model` varchar(20) DEFAULT NULL,
-  `transaction` int(1) DEFAULT NULL,
-  `price` int(20) DEFAULT NULL,
-  `date` varchar(10) DEFAULT NULL,
-  `time` varchar(10) DEFAULT NULL
+CREATE TABLE IF NOT EXISTS `historydata` (
+  `seq` int(11) NOT NULL,
+  `plant` varchar(20) NOT NULL,
+  `action` varchar(16) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `stamp` datetime NOT NULL,
+  PRIMARY KEY (`seq`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `history`
---
-
-INSERT INTO `history` (`id`, `model`, `transaction`, `price`, `date`, `time`) VALUES
-(1, 'robot A', 1, '$100', '01/04/2017', '07:23:23'),
-(2, 'robot B', 2, '$25', '05/24/2016', '07:23:23'),
-(3, 'robot C', 1, '$75', '09/01/2016', '07:23:23'),
-(4, 'robot D', 2, '$50', '02/20/2016', '07:23:23'),
-(5, 'robot E', 1, '$25', '02/09/2016', '07:23:23'),
-(6, 'robot F', 2, '$50', '01/15/2017', '07:23:23');
-
-
 
 --
--- Table structure for table `parts`
+-- Table structure for table `partsdata`
 --
 
-DROP TABLE IF EXISTS `partsdata`;
-CREATE TABLE `partsdata` (
-  `id` int(3) NOT NULL,
-  `part_name` varchar(20) DEFAULT NULL,
-  `part_code` varchar(20) DEFAULT NULL,
-  `ca` varchar(20) DEFAULT NULL,
-  `built_at` varchar(20) DEFAULT NULL,
-  `built_time` varchar(20) DEFAULT NULL,
-  `aquired_time` varchar(20) DEFAULT NULL,
-  `part_type` varchar(20) DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `partsdata` (
+  `id` varchar(20) NOT NULL,
+  `model` varchar(5) DEFAULT NULL,
+  `piece` varchar(5) DEFAULT NULL,
+  `plant` varchar(20) DEFAULT NULL,
+  `stamp` datetime DEFAULT NULL,
+  `aquired_time` datetime DEFAULT NULL,
   `file_name` varchar(20) DEFAULT NULL,
   `href` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `parts`
+-- Dumping data for table `partsdata`
 --
 
-INSERT INTO `partsdata` (`id`, `part_name`, `part_code`, `ca`, 
-                     `built_at`, `built_time`,
-                     `aquired_time`, `part_type`, `file_name`, `href`) VALUES
-(1, 'part A-1', 'A1', '000001', 'Strawberry', 'Jan-01-2017', 'Jan-30-2017', 'head', 'a1.jpeg', '/parts/1'),
-(2, 'part A-2', 'A2', '000002', 'Strawberry', 'Jan-02-2017', 'Jan-30-2017', 'body', 'a2.jpeg', '/parts/2'),
-(3, 'part A-3', 'A3', '000003', 'Strawberry', 'Jan-03-2017', 'Jan-30-2017', 'leg', 'a3.jpeg', '/parts/3'),
-(4, 'part B-1', 'B1', '000004', 'Strawberry', 'Jan-04-2017', 'Jan-30-2017', 'head', 'b1.jpeg', '/parts/4'),
-(5, 'part B-2', 'B2', '000005', 'Strawberry', 'Jan-05-2017', 'Jan-30-2017', 'body', 'b2.jpeg', '/parts/5'),
-(6, 'part B-3', 'B3', '000006', 'Strawberry', 'Jan-06-2017', 'Jan-30-2017', 'leg', 'b3.jpeg', '/parts/6'),
-(7, 'part C-1', 'C1', '000007', 'Strawberry', 'Jan-07-2017', 'Jan-30-2017', 'head', 'c1.jpeg', '/parts/7'),
-(8, 'part C-2', 'C2', '000008', 'Strawberry', 'Jan-08-2017', 'Jan-30-2017', 'body', 'c2.jpeg', '/parts/8'),
-(9, 'part C-3', 'C3', '000009', 'Strawberry', 'Jan-09-2017', 'Jan-30-2017', 'leg', 'c3.jpeg', '/parts/9'),
-(10, 'part M-1', 'M1', '000010', 'Strawberry', 'Jan-10-2017', 'Jan-30-2017', 'head', 'm1.jpeg', '/parts/10'),
-(11, 'part M-2', 'M2', '000011', 'Strawberry', 'Jan-11-2017', 'Jan-30-2017', 'body', 'm2.jpeg', '/parts/11'),
-(12, 'part M-3', 'M3', '000012', 'Strawberry', 'Jan-12-2017', 'Jan-30-2017', 'leg', 'm3.jpeg', '/parts/12'),
-(13, 'part R-1', 'R1', '000013', 'Strawberry', 'Jan-13-2017', 'Jan-30-2017', 'head', 'r1.jpeg', '/parts/13'),
-(14, 'part R-2', 'R2', '000014', 'Strawberry', 'Jan-14-2017', 'Jan-30-2017', 'body', 'r2.jpeg', '/parts/14'),
-(15, 'part R-3', 'R3', '000015', 'Strawberry', 'Jan-15-2017', 'Jan-30-2017', 'leg', 'r3.jpeg', '/parts/15'),
-(16, 'part W-1', 'W1', '000016', 'Strawberry', 'Jan-16-2017', 'Jan-30-2017', 'head', 'w1.jpeg', '/parts/16'),
-(17, 'part W-2', 'W2', '000017', 'Strawberry', 'Jan-17-2017', 'Jan-30-2017', 'body', 'w2.jpeg', '/parts/17'),
-(18, 'part W-3', 'W3', '000018', 'Strawberry', 'Jan-18-2017', 'Jan-30-2017', 'leg', 'w3.jpeg', '/parts/18');
+INSERT INTO `partsdata` (`id`, `model`, `piece`, `plant`, `stamp`, `aquired_time`, `file_name`, `href`) VALUES
+('000001', 'A', '1', 'strawberry', '2017-01-01 00:00:00', '2017-01-01 00:00:00', 'a1.jpeg', '/parts/000001'),
+('000002', 'A', '2', 'strawberry', '2017-01-02 00:00:00', '2017-01-02 00:00:00', 'a2.jpeg', '/parts/000002'),
+('000003', 'A', '3', 'strawberry', '2017-01-03 00:00:00', '2017-01-03 00:00:00', 'a3.jpeg', '/parts/000003'),
+('000004', 'B', '1', 'strawberry', '2017-01-04 00:00:00', '2017-01-04 00:00:00', 'b1.jpeg', '/parts/000004'),
+('000005', 'B', '2', 'strawberry', '2017-01-05 00:00:00', '2017-01-05 00:00:00', 'b2.jpeg', '/parts/000005'),
+('000006', 'B', '3', 'strawberry', '2017-01-06 00:00:00', '2017-01-06 00:00:00', 'b3.jpeg', '/parts/000006'),
+('000007', 'C', '1', 'strawberry', '2017-01-07 00:00:00', '2017-01-07 00:00:00', 'c1.jpeg', '/parts/000007'),
+('000008', 'C', '2', 'strawberry', '2017-01-08 00:00:00', '2017-01-08 00:00:00', 'c2.jpeg', '/parts/000008'),
+('000009', 'C', '3', 'strawberry', '2017-01-09 00:00:00', '2017-01-09 00:00:00', 'c3.jpeg', '/parts/000009'),
+('000010', 'M', '1', 'strawberry', '2017-01-10 00:00:00', '2017-01-10 00:00:00', 'm1.jpeg', '/parts/000010'),
+('000011', 'M', '2', 'strawberry', '2017-01-11 00:00:00', '2017-01-11 00:00:00', 'm2.jpeg', '/parts/000011'),
+('000012', 'M', '3', 'strawberry', '2017-01-12 00:00:00', '2017-01-12 00:00:00', 'm3.jpeg', '/parts/000012'),
+('000013', 'R', '1', 'strawberry', '2017-01-13 00:00:00', '2017-01-13 00:00:00', 'r1.jpeg', '/parts/000013'),
+('000014', 'R', '2', 'strawberry', '2017-01-14 00:00:00', '2017-01-14 00:00:00', 'r2.jpeg', '/parts/000014'),
+('000015', 'R', '3', 'strawberry', '2017-01-15 00:00:00', '2017-01-15 00:00:00', 'r3.jpeg', '/parts/000015'),
+('000016', 'W', '1', 'strawberry', '2017-01-16 00:00:00', '2017-01-16 00:00:00', 'w1.jpeg', '/parts/000016'),
+('000017', 'W', '2', 'strawberry', '2017-01-17 00:00:00', '2017-01-17 00:00:00', 'w2.jpeg', '/parts/000017'),
+('000018', 'W', '3', 'strawberry', '2017-01-18 00:00:00', '2017-01-18 00:00:00', 'w3.jpeg', '/parts/000018');
+

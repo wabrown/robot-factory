@@ -15,7 +15,7 @@
 class Partsdata extends MY_Model
 {
     
-    var $data = array(
+    /*var $data = array(
         array('id' => '1',
             'name' => 'part A-1',
             'partCode' => 'A1',
@@ -196,7 +196,7 @@ class Partsdata extends MY_Model
             'part' => 'head',
             'fileName' => 'w3.jpeg',
             'href' => '/parts/18'),
-    );
+    );*/
      
      
     
@@ -216,10 +216,11 @@ class Partsdata extends MY_Model
 
     // retrieve a single part
     public function getPart($which) {
-        // iterate over the data until we find the one we want
-        foreach ($this->data as $record) {
-            if ($record['id'] == $which) {
-                return $record;
+        $allParts = $this->all();
+        foreach ($allParts as $onePart) {
+            $id = $onePart->id;
+            if ($id == $which) {
+                return $onePart;
             }
         }
         return null;
