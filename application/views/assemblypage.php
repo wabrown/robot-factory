@@ -16,11 +16,13 @@ and open the template in the editor.
             <td>
                 <div >
                     <!-- The initial robot displayed. -->
-                    <img src="../assets/images/parts/{head1}" id="HeadImage" class="assembly_image"/> </br>
-                    <img src="../assets/images/parts/{body1}" id="BodyImage" class="assembly_image"/> </br>
-                    <img src="../assets/images/parts/{feet1}" id="FeetImage" class="assembly_image"/>
+                    <img src="/assets/images/parts/{head1}" id="HeadImage" class="assembly_image"/> </br>
+                    <img src="/assets/images/parts/{body1}" id="BodyImage" class="assembly_image"/> </br>
+                    <img src="/assets/images/parts/{feet1}" id="FeetImage" class="assembly_image"/>
                 </div>
             </td>
+        <!-- Form -->
+        <form>
             <td class="container">
                 <h4> Head: </h4>
                 <div class="parts_container">
@@ -53,13 +55,15 @@ and open the template in the editor.
                     <input type="radio" name="feet" id="{feet6}" onchange="changeFeetImage(this)" />W
                 </div>
                 <div class="btn-space">
-                    <input type="button" class="btn btn-primary" value="Build it"></input>        
+                    <!-- call assemble (check to-do itemadd()) -->
+                    <input type="submit" class="btn btn-primary" value="Assemble bot" onclick="assemble()"></input>        
                     <input type="button" class="btn btn-danger" value="Return to Head Office"></input> 
                 </div>
 
             </td>
+        </form>
         </tr>
 
     </table>        
-
+    
 </div>
