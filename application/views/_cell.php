@@ -12,7 +12,7 @@
  */
 ?>
 
-<a href="{href}">
-    <img src="/assets/images/parts/{file_name}" class="cell_part_image" class="img-responsive" title="{part_name}"/>
-    <p class="text-info text-centered">{part_code}</p>
+<a href="parts/{id}">
+    <img src="/assets/images/parts/{model}{piece}.jpeg" class="cell_part_image" class="img-responsive" title="{model}{piece}"/>
+    <p class="text-info text-centered">{model}{piece}</p>
 </a>

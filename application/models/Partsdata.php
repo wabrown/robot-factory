@@ -208,7 +208,7 @@ class Partsdata extends MY_Model
     }
 
     // retrieve all of the parts
-    public function getAllParts()
+    public function get_all_parts()
     {
         return $this->all();
 
@@ -221,6 +221,21 @@ class Partsdata extends MY_Model
             $id = $onePart->id;
             if ($id == $which) {
                 return $onePart;
+            }
+        }
+    }    
+    public function get_single_part($which)
+    {
+        $all_parts = $this->all();
+        
+        // iterate over the data until we find the one we want
+        foreach ($all_parts as $one_part)
+        {
+            $id = $one_part->id;
+            
+            if($id == $which)
+            {
+                return $one_part;
             }
         }
         return null;
