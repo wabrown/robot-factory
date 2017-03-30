@@ -22,42 +22,78 @@ class Parts extends Application
 
     public function index()
     {
+        $this->data['pagetitle'] = 'Parts List';
         $this->data['pagebody'] = 'partspage';
 
-        $allParts = $this->partsdata->getAllParts();
-
+        // Get all parts 
+        $allParts = $this->partsdata->get_all_parts();
+        sort($allParts);
+        
+        // Create each cell
         foreach ($allParts as $part)
         {
             $cells[] = $this->parser->parse('_cell', (array) $part, true);
+            
         }
+       
+        //$this->data['parts_table'] = $this->parser->parse('partspage', (array) $cells, true);
 
+        
         $this->load->library('table');
-
         $robot_array = array(
             'table_open' => '<table class="table-bordered">',
             'heading_cell_start' => '<th class="text-danger header-size">',
         );
-
         $this->table->set_heading('Head Parts', 'Torso Parts', 'Leg Parts');
         $this->table->set_template($robot_array);
-
         $rows = $this->table->make_columns($cells, 3);
-
         $this->data['parts_table'] = $this->table->generate($rows);
 
+       
         $this->render();
     }
-
-    public function getone($id)
+    
+    public function get_single_page($id)
     {
         // load a page for details
         $this->data['pagebody'] = 'singlepage';
 
-        $record = $this->partsdata->getPart($id);
-
+        $onePart = $this->partsdata->get_single_part($id);
+ 
         // merge the records to data array
-        $this->data = array_merge($this->data, $record);
+        $this->data = array_merge($this->data, (array)$onePart);
 
         $this->render();
     }
+    
+    /*
+    public function get_random_parts(){
+        
+         $this->data['pagetitle'] = 'TEST get parts certis';
+         $this->data['pagebody'] = 'partspage';
+         
+        $certis = file_get_contents('https://umbrella.jlparry.com/work/mybuilds?key=29151a');
+        echo $certis;
+       $decodedJson = json_decode($certis);
+       
+       
+       foreach ($decodedJson as $part)
+        {
+  
+            $cells[] = $this->parser->parse('_cell2', (array) $part, true);
+        }
+        
+        $this->load->library('table');
+        $robot_array = array(
+            'table_open' => '<table class="table-bordered">',
+            'heading_cell_start' => '<th class="text-danger header-size">',
+        );
+        $this->table->set_heading('Head Parts', 'Torso Parts', 'Leg Parts');
+        $this->table->set_template($robot_array);
+        $rows = $this->table->make_columns($cells, 3);
+        $this->data['parts_table'] = $this->table->generate($rows);
+
+       
+        $this->render();
+    }*/
 }
