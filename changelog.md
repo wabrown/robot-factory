@@ -75,3 +75,6 @@
   - (Config - autoload, constants)
   - (Models - Partsdata)
   - (Views - _cell)
+
+### *v.022* (March 21, 2017)
+- Started on the Manage page (Karan/William)
