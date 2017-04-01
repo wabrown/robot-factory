@@ -55,12 +55,6 @@ class Partsdata extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
-
-    public function deletePartById($id)
-    {
-        $this->db->where('id', $id);
-        $this->db->delete('partsdata');
-    }
   
     public function getPartById($id)
     {
@@ -70,5 +64,19 @@ class Partsdata extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    
+    public function deletePartById($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('partsdata');
+    }
 
+    public function getPartByFile($filename)
+    {
+        $this->db->select('*')->from('partsdata');
+        $this->db->where('file_name', $filename);
+        $query = $this->db->get();
+        return $query->result_array();
+    } 
+    
 }
