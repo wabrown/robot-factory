@@ -12,38 +12,63 @@
  * @author Jake
  */
 
-class Partsdata extends MY_Model
+class Partsdata extends CI_Model
 {
-
     // Constructor    
     public function __construct()
     {
         parent::__construct('partsdata', 'id');
     }
 
-    // retrieve all of the parts
-    public function get_all_parts()
+    // retrieve all of the parts from db
+    public function getAllParts()
     {
-        return $this->all();
-
+        return $this->db->get('partsdata')->result_array();
     }
 
     // retrieve a single part
-    public function get_single_part($which)
+    public function getSinglePart($which)
     {
-        $all_parts = $this->all();
-        
+        $all_parts = $this->getAllParts();
+
         // iterate over the data until we find the one we want
         foreach ($all_parts as $one_part)
         {
-            $id = $one_part->id;
-            
-            if($id == $which)
+            if ($one_part['id'] == $which)
             {
                 return $one_part;
             }
         }
         return null;
+    }
+
+    // insert parts to db
+    public function insertParts($parts)
+    {
+        $this->db->insert_batch('partsdata', $parts);
+    }
+
+    // get part by piece - head, torso, legs
+    public function getPartsByPiece($piece)
+    {
+        $this->db->select('*')->from('partsdata');
+        $this->db->where('piece', $piece);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function deletePartById($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('partsdata');
+    }
+
+    public function getPartById($id)
+    {
+        $this->db->select('*')->from('partsdata');
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        return $query->result_array();
     }
 
 }
