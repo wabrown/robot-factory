@@ -3,10 +3,7 @@
 <div class="container-fluid">
 
     <h2>{pagetitle}</h2> 
-    </br>
-
-    </br>
-    </br>
+    <br /><br />
 
 
 </div>
