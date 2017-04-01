@@ -1,33 +1,36 @@
 <!-- History page. Displays Contents -->
 
 <div class="container-fluid">
-    <!-- title of the page -->
-    <h2>History</h2>
+    <h2>{pagetitle}</h2>
 
-    <!-- creates the table -->
-    <table class="table table-bordered">
-        <!-- defines the table rows -->
+    {pagination}
+    
+<ul class="nav nav-pills">
+        <li><b>Sort</b></li>
+        <li><a href="/History/page/1/modelDesc">By Model - Desc</a></li>
+        <li><a href="/History/page/1/modelAsc">By Model - Asc</a></li>
+        <li><a href="/History/page/1/dateDesc">By Model - Asc</a></li>
+        <li><a href="/History/page/1/dateAsc">By Model - Asc</a></li>
+</ul><br/>    
+    <table class="table table-bordered sortable">
         <tr>
-            <!-- defines the table header -->
-            <th>Model</th>
             <th>Transaction</th>
-            <th>Price</th>
-            <th>Date</th>
-            <th>Time</th>    
+            <th>Action</th>
+            <th>Sequence</th>
+            <th>Amount</th>         
+            <th>Plant</th>            
+            <th>Date/Time</th>
         </tr>
-        <!-- calls the transaction -->
+        
         {transaction}
-
-        <!-- defines the table rows
         <tr>
-        <!-- defines the table data -->
-        <td>{model}</td>
-        <td>{transaction}</td>
-        <td>{price}</td>
-        <td>{date}</td>
-        <td>{time}</td>
+        <td>{id}</td>
+        <td>{action}</td>        
+        <td>{seq}</td>
+        <td>{amount}</td>
+        <td>{plant}</td>        
+        <td>{stamp}</td>
         </tr>
-        <!-- calls the transaction -->
         {/transaction}
     </table>
 
