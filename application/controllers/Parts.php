@@ -100,6 +100,7 @@ class Parts extends Application
     // get only single page - detail
     public function getSinglePage($id)
     {
+
         // load a page for details
         $this->data['pagebody'] = 'singlepage';
 

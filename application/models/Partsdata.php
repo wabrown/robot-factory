@@ -11,9 +11,9 @@
  *
  * @author Jake
  */
+
 class Partsdata extends CI_Model
 {
-
     // Constructor    
     public function __construct()
     {
