@@ -55,7 +55,7 @@
                         <img src="/assets/images/parts/{model}{piece}.jpeg" 
                              class="cell_part_image" class="img-responsive"/>
                         <p class="text-info text-centered">{model}{piece}</p>
-                    </a>
+                     </a>
                     {/legs_parts} 
                 </td>
 

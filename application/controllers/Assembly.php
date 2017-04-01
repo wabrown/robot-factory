@@ -65,7 +65,7 @@ class Assembly extends Application {
                 $this->partsdata->deletePartById($legsId);
                 // return to view
                 echo json_encode(array("error"=>false));
-                return false;
+                 return false;
             }
         }
     }

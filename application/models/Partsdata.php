@@ -22,7 +22,7 @@ class Partsdata extends CI_Model
 
     // retrieve all of the parts from db
     public function get_all_parts()
-    {
+     {
         return $this->db->get('partsdata')->result_array();
     }
 

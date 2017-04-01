@@ -52,7 +52,7 @@ class Robotsdata extends CI_Model {
                 return $record;
             }
         }
-         return null;
+          return null;
     }
     
     public function createBot($data) {

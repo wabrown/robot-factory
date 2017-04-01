@@ -107,7 +107,7 @@ class Parts extends Application
 
 
     public function get_random_parts()
-    {
+     {
         $API_KEY = '3c2262';
         $json_parts = file_get_contents('https://umbrella.jlparry.com/work/mybuilds?key=' . $API_KEY);
 
