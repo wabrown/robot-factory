@@ -10,6 +10,7 @@
     </a> 
     <a href="/Parts/buy_parts">
         <input type="button" class="btn btn-primary" value="Buy Parts"/>
+
     </a>      
      <a href="/Parts/get_parts_by_piece">
         <input type="button" class="btn btn-primary" value="Get piece head only"/>

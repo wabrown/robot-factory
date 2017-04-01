@@ -46,14 +46,31 @@ class Robotsdata extends CI_Model {
 
     // retrieve a single bot
     public function getBot($which) {
-
         // iterate over the data until we find the one we want
         foreach ($this->bots as $record) {
             if ($record['id'] == $which) {
                 return $record;
             }
         }
-        return null;
+          return null;
     }
-
+    
+    public function createBot($data) {
+        $this->db->insert('assembledbots', $data);
+    }
+    
+    // Returns an ID number by adding 1 to the current number of rows.
+    public function getIdNum() {
+        $botRowCount = $this->db->count_all('assembledbots');
+        $idNum = $botRowCount+1;
+        return $idNum;
+    }
+    
 }
+
+
+
+
+
+
+

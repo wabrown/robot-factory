@@ -53,6 +53,7 @@ class Parts extends Application
         $legs_parts = array();
 
         // save parts by piece - head, torso, legs
+
         foreach ($allParts as $part)
         {
             if ($part['piece'] == '1')
@@ -100,18 +101,20 @@ class Parts extends Application
     // get only single page - detail
     public function getSinglePage($id)
     {
-
         // load a page for details
         $this->data['pagebody'] = 'singlepage';
 
         // get single part
+
         $onePart = $this->partsdata->getSinglePart($id);
+
 
         // merge the records to data array
         $this->data = array_merge($this->data, (array) $onePart);
 
         $this->render();
     }
+
 
 
     // create part array 
