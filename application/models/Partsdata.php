@@ -13,7 +13,6 @@
  */
 class Partsdata extends CI_Model
 {
-
     // Constructor    
     public function __construct()
     {
@@ -21,15 +20,16 @@ class Partsdata extends CI_Model
     }
 
     // retrieve all of the parts from db
-    public function get_all_parts()
-     {
+
+    public function getAllParts()
+    {
         return $this->db->get('partsdata')->result_array();
     }
 
     // retrieve a single part
-    public function get_single_part($which)
+    public function getSinglePart($which)
     {
-        $all_parts = $this->get_all_parts();
+        $all_parts = $this->getAllParts();
 
         // iterate over the data until we find the one we want
         foreach ($all_parts as $one_part)
@@ -43,39 +43,30 @@ class Partsdata extends CI_Model
     }
 
     // insert parts to db
-    public function insert_parts($parts)
+    public function insertParts($parts)
     {
         $this->db->insert_batch('partsdata', $parts);
     }
-
-    public function get_parts_by_piece($piece)
+    // get part by piece - head, torso, legs
+    public function getPartsByPiece($piece)
     {
         $this->db->select('*')->from('partsdata');
         $this->db->where('piece', $piece);
         $query = $this->db->get();
         return $query->result_array();
     }
-    
-        public function getPart($which) {
-        $allParts = $this->all();
-        foreach ($allParts as $onePart) {
-            $id = $onePart->id;
-            if ($id == $which) {
-                return $onePart;
-            }
-        }
-    }
-    
-     public function deletePartById($id)
+
+    public function deletePartById($id)
     {
         $this->db->where('id', $id);
         $this->db->delete('partsdata');
     }
-
-    public function getPartByFile($filename)
+  
+    public function getPartById($id)
     {
         $this->db->select('*')->from('partsdata');
-        $this->db->where('file_name', $filename);
+        $this->db->where('id', $id);
+
         $query = $this->db->get();
         return $query->result_array();
     }
