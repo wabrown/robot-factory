@@ -19,29 +19,29 @@ class Assembly extends Application {
 
     public function index() {
         // Retrieves the file names for each part in the Robots model.
-        $this->data['head1'] = $this->partsdata->get_single_part(1)['file_name'];
-        $this->data['body1'] = $this->partsdata->get_single_part(2)['file_name'];
-        $this->data['feet1'] = $this->partsdata->get_single_part(3)['file_name'];
+        $this->data['head1'] = $this->partsdata->getSinglePart(1)['file_name'];
+        $this->data['body1'] = $this->partsdata->getSinglePart(2)['file_name'];
+        $this->data['feet1'] = $this->partsdata->getSinglePart(3)['file_name'];
 
-        $this->data['head2'] = $this->partsdata->get_single_part(4)['file_name'];
-        $this->data['body2'] = $this->partsdata->get_single_part(5)['file_name'];
-        $this->data['feet2'] = $this->partsdata->get_single_part(6)['file_name'];
+        $this->data['head2'] = $this->partsdata->getSinglePart(4)['file_name'];
+        $this->data['body2'] = $this->partsdata->getSinglePart(5)['file_name'];
+        $this->data['feet2'] = $this->partsdata->getSinglePart(6)['file_name'];
 
-        $this->data['head3'] = $this->partsdata->get_single_part(7)['file_name'];
-        $this->data['body3'] = $this->partsdata->get_single_part(8)['file_name'];
-        $this->data['feet3'] = $this->partsdata->get_single_part(9)['file_name'];
+        $this->data['head3'] = $this->partsdata->getSinglePart(7)['file_name'];
+        $this->data['body3'] = $this->partsdata->getSinglePart(8)['file_name'];
+        $this->data['feet3'] = $this->partsdata->getSinglePart(9)['file_name'];
 
-        $this->data['head4'] = $this->partsdata->get_single_part(10)['file_name'];
-        $this->data['body4'] = $this->partsdata->get_single_part(11)['file_name'];
-        $this->data['feet4'] = $this->partsdata->get_single_part(12)['file_name'];
+        $this->data['head4'] = $this->partsdata->getSinglePart(10)['file_name'];
+        $this->data['body4'] = $this->partsdata->getSinglePart(11)['file_name'];
+        $this->data['feet4'] = $this->partsdata->getSinglePart(12)['file_name'];
 
-        $this->data['head5'] = $this->partsdata->get_single_part(13)['file_name'];
-        $this->data['body5'] = $this->partsdata->get_single_part(14)['file_name'];
-        $this->data['feet5'] = $this->partsdata->get_single_part(15)['file_name'];
+        $this->data['head5'] = $this->partsdata->getSinglePart(13)['file_name'];
+        $this->data['body5'] = $this->partsdata->getSinglePart(14)['file_name'];
+        $this->data['feet5'] = $this->partsdata->getSinglePart(15)['file_name'];
 
-        $this->data['head6'] = $this->partsdata->get_single_part(16)['file_name'];
-        $this->data['body6'] = $this->partsdata->get_single_part(17)['file_name'];
-        $this->data['feet6'] = $this->partsdata->get_single_part(18)['file_name'];
+        $this->data['head6'] = $this->partsdata->getSinglePart(16)['file_name'];
+        $this->data['body6'] = $this->partsdata->getSinglePart(17)['file_name'];
+        $this->data['feet6'] = $this->partsdata->getSinglePart(18)['file_name'];
         $this->data['pagebody'] = 'assemblypage';
         $this->render();
     }
