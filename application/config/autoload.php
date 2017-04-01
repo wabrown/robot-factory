@@ -133,5 +133,5 @@ $autoload['language'] = array();
   |
   |	$autoload['model'] = array('first_model' => 'first');
  */
-$autoload['model'] = array('robotsdata', 'partsdata', 'historydata');
-$autoload['database'] = array('partsdata', 'history');
+$autoload['database'] = array('partsdata');
+$autoload['model'] = array('robotsdata', 'partsdata', 'historydata', 'managedata');
