@@ -13,27 +13,6 @@
  */
 class Robotsdata extends CI_Model {
 
-    var $bots = array(
-        array('id' => '19',
-            'name' => 'robot A',
-            'fileName' => 'a.jpg'),
-        array('id' => '20',
-            'name' => 'robot B',
-            'fileName' => 'b.jpg'),
-        array('id' => '21',
-            'name' => 'robot C',
-            'fileName' => 'c.jpg'),
-        array('id' => '22',
-            'name' => 'robot M',
-            'fileName' => 'm.jpg'),
-        array('id' => '23',
-            'name' => 'robot R',
-            'fileName' => 'r.jpg'),
-        array('id' => '24',
-            'name' => 'robot W',
-            'fileName' => 'w.jpg')
-    );
-
     // Constructor    
     public function __construct() {
         parent::__construct();
