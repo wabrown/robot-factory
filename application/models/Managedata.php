@@ -9,9 +9,31 @@
 /**
  * Description of Managedata
  *
- * @author karan
+ * @author Jake
  */
-class Managedata
+class Managedata extends CI_Model
 {
-    //put your code here
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    // get api key
+    public function getKey()
+    {
+        $this->db->where('id', 0);
+        $data = $this->db->get('apikeydata');
+        $array = $data->result_array();
+        return $array[0]['keyvalue'];
+    }
+
+    // update api key
+    public function updateKey($apikey)
+    {
+        $this->db->set('keyvalue', $apikey);
+        $this->db->where('id', 0);
+        $this->db->update('apikeydata');
+    }
+
 }

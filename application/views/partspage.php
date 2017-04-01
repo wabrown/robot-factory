@@ -3,18 +3,18 @@
 <div class="container-fluid">
 
     <h2>{pagetitle}</h2> 
-    </br>
+    <br />
 
-    <a href="/Parts/get_random_parts">
+    <a class="text-danger">{message}</a>
+
+    <br /><br />
+
+    <a href="/Parts/getRandomParts">
         <input type="button" class="btn btn-primary" value="Build More Parts"/>
     </a> 
-    <a href="/Parts/buy_parts">
+    <a href="/Parts/buyParts">
         <input type="button" class="btn btn-primary" value="Buy Parts"/>
-
-    </a>      
-     <a href="/Parts/get_parts_by_piece">
-        <input type="button" class="btn btn-primary" value="Get piece head only"/>
-    </a>      
+    </a>         
 
     </br>
     </br>
@@ -32,7 +32,7 @@
                     {head_parts}
                     <a href="parts/{id}">
                         <img src="/assets/images/parts/{model}{piece}.jpeg" 
-                             class="cell_part_image" class="img-responsive"/>
+                             class="center-block cell_part_image img-responsive"/>
                         <p class="text-info text-centered">{model}{piece}</p>
                     </a>
                     {/head_parts}
@@ -42,7 +42,7 @@
                 <td> {torso_parts}
                     <a href="parts/{id}">
                         <img src="/assets/images/parts/{model}{piece}.jpeg" 
-                             class="cell_part_image" class="img-responsive"/>
+                             class="center-block cell_part_image img-responsive"/>
                         <p class="text-info text-centered">{model}{piece}</p>
                     </a>
                     {/torso_parts}
@@ -53,7 +53,7 @@
                     {legs_parts}
                     <a href="parts/{id}">
                         <img src="/assets/images/parts/{model}{piece}.jpeg" 
-                             class="cell_part_image" class="img-responsive"/>
+                             class="center-block cell_part_image img-responsive"/>
                         <p class="text-info text-centered">{model}{piece}</p>
                     </a>
                     {/legs_parts} 

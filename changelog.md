@@ -78,3 +78,6 @@
 
 ### *v.022* (March 21, 2017)
 - Started on the Manage page (Karan/William)
+
+### *v.023* (April 1, 2017)
+- Add API key function (Jake)

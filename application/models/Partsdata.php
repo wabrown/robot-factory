@@ -13,6 +13,7 @@
  */
 class Partsdata extends CI_Model
 {
+
     // Constructor    
     public function __construct()
     {
@@ -47,6 +48,7 @@ class Partsdata extends CI_Model
     {
         $this->db->insert_batch('partsdata', $parts);
     }
+
     // get part by piece - head, torso, legs
     public function getPartsByPiece($piece)
     {
@@ -55,7 +57,7 @@ class Partsdata extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
-  
+
     public function getPartById($id)
     {
         $this->db->select('*')->from('partsdata');
@@ -64,7 +66,7 @@ class Partsdata extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
-    
+
     public function deletePartById($id)
     {
         $this->db->where('id', $id);
@@ -77,6 +79,6 @@ class Partsdata extends CI_Model
         $this->db->where('file_name', $filename);
         $query = $this->db->get();
         return $query->result_array();
-    } 
-    
+    }
+
 }
