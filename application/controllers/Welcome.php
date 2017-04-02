@@ -23,7 +23,7 @@ class Welcome extends Application {
     public function index() {
 
         $this->data['pagebody'] = 'homepage';
-
+/*
         // build the list of authors, to pass on to our view
         $source = $this->historydata->getAllSummary();
         $info = array();
@@ -31,7 +31,7 @@ class Welcome extends Application {
             $info[] = array('numBots' => $record['numBots'], 'numParts' => $record['numParts'], 'monSpent' => $record['monSpent'], 'monEarned' => $record['monEarned']);
         }
         $this->data['numbers'] = $info;
-
+*/
         $this->render();
     }
 

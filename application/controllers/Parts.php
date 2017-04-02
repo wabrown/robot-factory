@@ -139,10 +139,12 @@ class Parts extends Application
 
         // create part array
         $random_parts_to_save = $this->createPartArray($random_parts);
+        $history_parts_to_save = $this->createHistory($random_parts_to_save, 'Built parts', 0);
 
         // insert parts to db
         $this->partsdata->insertParts($random_parts_to_save);
-
+        $this->historydata->insertPartsHistory($history_parts_to_save);
+        
         redirect('/parts');
     }
 
@@ -163,14 +165,39 @@ class Parts extends Application
 
         // decode json
         $buy_parts = json_decode($json_parts, true);
-
         // create part array
         $buy_parts_to_save = $this->createPartArray($buy_parts);
+        $history_parts_to_save = $this->createHistory($buy_parts_to_save, 'Bought a box of parts ', 100);
 
         // insert parts to db
         $this->partsdata->insertParts($buy_parts_to_save);
+        $this->historydata->insertPartsHistory($history_parts_to_save);
 
         redirect('/parts');
+    }
+
+    private function createHistory($array, $action, $amount)
+    {
+        $temp_array = array();
+
+        $num_of_parts = count($array);
+
+        $sequence = '';
+        foreach ($array as $part)
+        {
+            $sequence .= $part['id'] . ' ';            
+        }
+
+        $temp_array[] = array(
+            'action' => $action,
+            'amount' => $amount,
+            'quantity' => $num_of_parts,
+            'plant' => $part['plant'],
+            'seq' => $sequence,
+            'stamp' => $part['stamp']
+        );
+
+        return $temp_array;
     }
 
     // create part array 
