@@ -33,8 +33,7 @@ class Historydata extends MY_Model
         foreach ($this->data as $record)
             if ($record['transaction'] == $which)
                 return $record;
-
-
+            
         return null;
     }
 
@@ -62,7 +61,7 @@ class Historydata extends MY_Model
         return $query->result_array();
     }
 
-    public function sortByModel($order)
+  public function sortByModel($order)
     {
         $temp = '';
         if (strcmp($order, 'modelDesc') == 0)
@@ -75,8 +74,36 @@ class Historydata extends MY_Model
 
         $this->db->select('*');
         $this->db->from('historydata');
-        $this->db->order_by('action', $temp);
+        $this->db->order_by('model', $temp);
         $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function filterByModel($model)
+    {
+        $temp = '';
+        switch ($model){
+            case 'modelA':
+                $temp = '%a%';
+                break;
+            case 'modelB':
+                $temp = '%b%';
+                break;
+            case 'modelC':
+                $temp = '%c%';
+                break;
+            case 'modelM':
+                $temp = '%m%';
+                break;
+            case 'modelR':
+                $temp = '%r%';
+                break;
+            case 'modelW':
+                $temp = '%w%';
+                break;         
+        }
+        $sql = 'SELECT * FROM historydata WHERE model LIKE ?;';  
+        $query = $this->db->query($sql, $temp);
         return $query->result_array();
     }
 
