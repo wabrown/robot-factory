@@ -84,3 +84,7 @@
 
 ### *v.024* (April 1, 2017)
 - Added the reboot function (Karan)
+
+### *v.025* (April 1, 2017)
+- Created history page (Jake)
+- Added filters, navigation, order functions on history page (Jake)
