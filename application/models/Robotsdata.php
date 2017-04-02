@@ -11,45 +11,51 @@
  *
  * @author Jake
  */
-class Robotsdata extends CI_Model {
+class Robotsdata extends CI_Model
+{
 
     // Constructor    
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
 
     // retrieve all of bots
-    public function getAllBots() {
+    public function getAllBots()
+    {
         return $this->bots;
     }
 
     // retrieve a single bot
-    public function getBot($which) {
+    public function getBot($which)
+    {
         // iterate over the data until we find the one we want
-        foreach ($this->bots as $record) {
-            if ($record['id'] == $which) {
+        foreach ($this->bots as $record)
+        {
+            if ($record['id'] == $which)
+            {
                 return $record;
             }
         }
-          return null;
+        return null;
     }
-    
-    public function createBot($data) {
+
+    public function createBot($data)
+    {
         $this->db->insert('assembledbots', $data);
     }
-    
+
     // Returns an ID number by adding 1 to the current number of rows.
-    public function getIdNum() {
+    public function getIdNum()
+    {
         $botRowCount = $this->db->count_all('assembledbots');
-        $idNum = $botRowCount+1;
+        $idNum = $botRowCount + 1;
         return $idNum;
     }
-    
+
+    public function deleteAll()
+    {
+        $this->db->empty_table('assembledbots');
+    }
+
 }
-
-
-
-
-
-
-

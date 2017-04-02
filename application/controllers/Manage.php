@@ -24,18 +24,18 @@ class Manage extends Application
     public function index()
     {
         $this->data['pagebody'] = 'managepage';
-        $this->data['pagetitle'] = 'Management';   
+        $this->data['pagetitle'] = 'Management';
         $this->data['message'] = '';
 
         $this->render();
     }
-    
+
     public function register()
     {
-        $this->data['pagetitle'] = 'Management';  
+        $this->data['pagetitle'] = 'Management';
         $this->data['pagebody'] = 'managepage';
         $password = $_POST["password"]; //415157
-        
+
         $response = file_get_contents("https://umbrella.jlparry.com/work/registerme/strawberry/$password");
         $responseArray = explode(" ", $response);
 
@@ -43,12 +43,38 @@ class Manage extends Application
         {
             $this->managedata->updateKey($responseArray[1]);
             $this->data['message'] = "<div>Successfully get the API key</div>";
+            $data = array('keyvalue' => $response);
+            $this->db->insert('apikeydata', $data);
         } else
         {
             $this->data['message'] = "<div class='text-danger'>$response</div>";
         }
-        
+
         $this->render();
+    }
+
+    public function reboot()
+    {
+
+        $apikey = $this->managedata->getKey();
+
+        $response = file_get_contents("https://umbrella.jlparry.com/work/rebootme?key=$apikey");
+        $responseArray = explode(" ", $response);
+
+        if ($responseArray[0] == 'Ok')
+        {
+            $this->partsdata->deleteAll();
+            $this->historydata->deleteAll();
+            //$this->robotsdata->deleteAll();
+            $this->session->set_userdata('message', "Plant Rebooted.");
+            echo 'Sucess';
+        } else
+        {
+            //error
+            $this->session->set_userdata('error', $response);
+            echo 'Error';
+        }
+        //redirect('/manage');
     }
 
 }
