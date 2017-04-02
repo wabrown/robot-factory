@@ -47,34 +47,42 @@ class Historydata extends MY_Model
     public function sortByDate($order)
     {
         $temp = '';
-        if (strcmp($order, 'dateDesc') == 0){
+        if (strcmp($order, 'dateDesc') == 0)
+        {
             $temp = 'desc';
-        } elseif (strcmp($order, 'dateAsc') == 0){
+        } elseif (strcmp($order, 'dateAsc') == 0)
+        {
             $temp = 'asc';
         }
-        
+
         $this->db->select('*');
         $this->db->from('historydata');
         $this->db->order_by('stamp', $temp);
         $query = $this->db->get();
-        return $query->result_array();      
-   }
-   
+        return $query->result_array();
+    }
 
     public function sortByModel($order)
     {
         $temp = '';
-        if (strcmp($order, 'modelDesc') == 0){
+        if (strcmp($order, 'modelDesc') == 0)
+        {
             $temp = 'desc';
-        } elseif (strcmp($order, 'modelAsc') == 0){
+        } elseif (strcmp($order, 'modelAsc') == 0)
+        {
             $temp = 'asc';
         }
-        
+
         $this->db->select('*');
         $this->db->from('historydata');
         $this->db->order_by('action', $temp);
         $query = $this->db->get();
-        return $query->result_array();      
-   }   
+        return $query->result_array();
+    }
+
+    public function deleteAll()
+    {
+        $this->db->empty_table('historydata');
+    }
 
 }
