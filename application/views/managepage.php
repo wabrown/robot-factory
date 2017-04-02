@@ -17,10 +17,12 @@
         </form>
         {message}
     </div>
-    
+
     <div class="col-lg-3 col-md-6">
         <div class="panel panel-success">
-            <a href = "egn"><h2>Reboot</h2></a>  
+            <form action="/manage/reboot" method="POST">
+                <input type="submit" value="Reboot">
+            </form>
         </div>
     </div>
 

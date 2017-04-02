@@ -11,15 +11,18 @@
  *
  * @author Jake
  */
-class Robotsdata extends CI_Model {
+class Robotsdata extends CI_Model
+{
 
     // Constructor    
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
 
     // retrieve all of bots
-    public function getAllBots() {
+    public function getAllBots()
+    {
         return $this->bots;
     }
 	public function getAllBotsAsArray(){
@@ -27,15 +30,24 @@ class Robotsdata extends CI_Model {
 	}
 
     // retrieve a single bot
-    public function getBot($which) {
+    public function getBot($which)
+    {
         // iterate over the data until we find the one we want
+<<<<<<< HEAD
         foreach ($this->db->get('assembledbots')->result_array() as $record) {
             if ($record['id'] == $which) {
+=======
+        foreach ($this->bots as $record)
+        {
+            if ($record['id'] == $which)
+            {
+>>>>>>> ef21bbc5ca8c564054ea35c7cfe807a22345e448
                 return $record;
             }
         }
-          return null;
+        return null;
     }
+<<<<<<< HEAD
     
 	function size()
 	{
@@ -44,21 +56,25 @@ class Robotsdata extends CI_Model {
 	}
 	
     public function createBot($data) {
+=======
+
+    public function createBot($data)
+    {
+>>>>>>> ef21bbc5ca8c564054ea35c7cfe807a22345e448
         $this->db->insert('assembledbots', $data);
     }
-    
+
     // Returns an ID number by adding 1 to the current number of rows.
-    public function getIdNum() {
+    public function getIdNum()
+    {
         $botRowCount = $this->db->count_all('assembledbots');
-        $idNum = $botRowCount+1;
+        $idNum = $botRowCount + 1;
         return $idNum;
     }
-    
+
+    public function deleteAll()
+    {
+        $this->db->empty_table('assembledbots');
+    }
+
 }
-
-
-
-
-
-
-
