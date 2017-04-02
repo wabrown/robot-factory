@@ -38,6 +38,7 @@ class Parts extends Application
         {
             $this->data['pagetitle'] = 'Parts List - Only Allow to Worker';
             $this->data['pagebody'] = 'blockedpage';
+            $this->data['message'] = "<div></div>";
             $this->render();
         }
     }
@@ -47,6 +48,7 @@ class Parts extends Application
     {
         $this->data['pagetitle'] = 'Parts List';
         $this->data['pagebody'] = 'partspage';
+        $this->data['message'] = "<div></div>";
 
         $head_parts = array();
         $torso_parts = array();
@@ -56,39 +58,43 @@ class Parts extends Application
 
         foreach ($allParts as $part)
         {
-            if ($part['piece'] == '1')
+            switch ($part['piece'])
             {
-                $head_parts[] = array(
-                    'id' => $part['id'],
-                    'model' => $part['model'],
-                    'piece' => $part['piece'],
-                    'plant' => $part['plant'],
-                    'stamp' => $part['stamp'],
-                    'aquired_time' => date("Y-m-d H:i:s", time()),
-                    'file_name' => $part['model'] . $part['piece'] . '.jpeg',
-                    'href' => '/parts/' . $part['id']);
-            } elseif ($part['piece'] == '2')
-            {
-                $torso_parts[] = array(
-                    'id' => $part['id'],
-                    'model' => $part['model'],
-                    'piece' => $part['piece'],
-                    'plant' => $part['plant'],
-                    'stamp' => $part['stamp'],
-                    'aquired_time' => date("Y-m-d H:i:s", time()),
-                    'file_name' => $part['model'] . $part['piece'] . '.jpeg',
-                    'href' => '/parts/' . $part['id']);
-            } elseif ($part['piece'] == '3')
-            {
-                $legs_parts[] = array(
-                    'id' => $part['id'],
-                    'model' => $part['model'],
-                    'piece' => $part['piece'],
-                    'plant' => $part['plant'],
-                    'stamp' => $part['stamp'],
-                    'aquired_time' => date("Y-m-d H:i:s", time()),
-                    'file_name' => $part['model'] . $part['piece'] . '.jpeg',
-                    'href' => '/parts/' . $part['id']);
+                case '1':
+                    $head_parts[] = array(
+                        'id' => $part['id'],
+                        'model' => $part['model'],
+                        'piece' => $part['piece'],
+                        'plant' => $part['plant'],
+                        'stamp' => $part['stamp'],
+                        'aquired_time' => date("Y-m-d H:i:s", time()),
+                        'file_name' => $part['model'] . $part['piece'] . '.jpeg',
+                        'href' => '/parts/' . $part['id']);
+                    break;
+                case '2':
+
+                    $torso_parts[] = array(
+                        'id' => $part['id'],
+                        'model' => $part['model'],
+                        'piece' => $part['piece'],
+                        'plant' => $part['plant'],
+                        'stamp' => $part['stamp'],
+                        'aquired_time' => date("Y-m-d H:i:s", time()),
+                        'file_name' => $part['model'] . $part['piece'] . '.jpeg',
+                        'href' => '/parts/' . $part['id']);
+                    break;
+
+                case '3':
+                    $legs_parts[] = array(
+                        'id' => $part['id'],
+                        'model' => $part['model'],
+                        'piece' => $part['piece'],
+                        'plant' => $part['plant'],
+                        'stamp' => $part['stamp'],
+                        'aquired_time' => date("Y-m-d H:i:s", time()),
+                        'file_name' => $part['model'] . $part['piece'] . '.jpeg',
+                        'href' => '/parts/' . $part['id']);
+                    break;
             }
         }
 
@@ -105,9 +111,7 @@ class Parts extends Application
         $this->data['pagebody'] = 'singlepage';
 
         // get single part
-
         $onePart = $this->partsdata->getSinglePart($id);
-
 
         // merge the records to data array
         $this->data = array_merge($this->data, (array) $onePart);
@@ -115,7 +119,86 @@ class Parts extends Application
         $this->render();
     }
 
+    // mybuild function
+    public function getRandomParts()
+    {
+        $API_KEY = $this->managedata->getKey();
 
+        if ($API_KEY == '000000')
+        {
+            $this->data['pagebody'] = 'blockedpage';
+            $this->data['pagetitle'] = '<a class="text-danger">Please register first</a>';
+            $this->render();
+            return;
+        }
+
+        $json_parts = file_get_contents('https://umbrella.jlparry.com/work/mybuilds?key=' . $API_KEY);
+
+        // decode json
+        $random_parts = json_decode($json_parts, true);
+
+        // create part array
+        $random_parts_to_save = $this->createPartArray($random_parts);
+        $history_parts_to_save = $this->createHistory($random_parts_to_save, 'Built parts', 0);
+
+        // insert parts to db
+        $this->partsdata->insertParts($random_parts_to_save);
+        $this->historydata->insertPartsHistory($history_parts_to_save);
+        
+        redirect('/parts');
+    }
+
+    // buy box function
+    public function buyParts()
+    {
+        $API_KEY = $this->managedata->getKey();
+
+        if ($API_KEY == '000000')
+        {
+            $this->data['pagebody'] = 'blockedpage';
+            $this->data['pagetitle'] = '<a class="text-danger">Please register first</a>';
+            $this->render();
+            return;
+        }
+
+        $json_parts = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=' . $API_KEY);
+
+        // decode json
+        $buy_parts = json_decode($json_parts, true);
+        // create part array
+        $buy_parts_to_save = $this->createPartArray($buy_parts);
+        $history_parts_to_save = $this->createHistory($buy_parts_to_save, 'Bought a box of parts ', 100);
+
+        // insert parts to db
+        $this->partsdata->insertParts($buy_parts_to_save);
+        $this->historydata->insertPartsHistory($history_parts_to_save);
+
+        redirect('/parts');
+    }
+
+    private function createHistory($array, $action, $amount)
+    {
+        $temp_array = array();
+
+        $num_of_parts = count($array);
+
+        $sequence = '';
+        foreach ($array as $part)
+        {
+            $sequence .= $part['id'] . ' ';            
+        }
+
+        $temp_array[] = array(
+            'action' => $action,
+            'amount' => $amount,
+            'quantity' => $num_of_parts,
+            'plant' => $part['plant'],
+            'seq' => $sequence,
+            'stamp' => $part['stamp']
+        );
+
+        return $temp_array;
+    }
 
     // create part array 
     private function createPartArray($array)
@@ -137,4 +220,5 @@ class Parts extends Application
 
         return $temp_array;
     }
+
 }
