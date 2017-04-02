@@ -23,9 +23,20 @@ class Manage extends Application
 
     public function index()
     {
-        $this->data['pagebody'] = 'managepage';
-        $this->data['pagetitle'] = 'Management';
-        $this->data['message'] = '';
+       // get user roles
+        $user_role = $this->session->userdata('userrole');
+
+        // only allow to worker
+        if ($user_role == 'boss')
+        {
+            $this->data['pagetitle'] = 'Management';            
+            $this->data['pagebody'] = 'managepage';
+            $this->data['message'] = '';
+        } else
+        {
+            $this->data['pagetitle'] = 'Management - Only Allow to Boss';
+            $this->data['pagebody'] = 'blockedpage';          
+        }
 
         $this->render();
     }

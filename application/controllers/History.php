@@ -29,6 +29,12 @@ class History extends Application
         $this->page(1);
     }
 
+    public function modelFilter()
+    {
+        $model = $_POST['model'];
+        $this->page(1, $model);
+    }
+
     // Show a single page of transactions
     private function showPage($histories)
     {
@@ -47,7 +53,7 @@ class History extends Application
                     'id' => $history['id'],
                     'action' => $history['action'],
                     'seq' => $history['seq'],
-                    //'model' => $history['model'],
+                    'model' => $history['model'],
                     'amount' => $history['amount'],
                     'plant' => $history['plant'],
                     'stamp' => $history['stamp']);
@@ -67,23 +73,24 @@ class History extends Application
     // Extract & handle a page of items, defaulting to the beginning    
     public function page($num = 1, $order = NULL)
     {
-        switch ($order)
+        if ($order == 'dateDesc')
         {
-            case 'dateDesc':
-                $histories = $this->historydata->sortByDate($order);
-                break;
-            case 'dateAsc':
-                $histories = $this->historydata->sortByDate($order);
-                break;
-            case 'modelDesc':
-                $histories = $this->historydata->sortByModel($order);
-                break;
-            case 'modelAsc':
-                $histories = $this->historydata->sortByModel($order);
-                break;
-            default :
-                $histories = $this->historydata->getAllTransaction();
-                break;
+            $histories = $this->historydata->sortByDate($order);
+        } else if ($order == 'dateAsc')
+        {
+            $histories = $this->historydata->sortByDate($order);
+        } else if ($order == 'modelDesc')
+        {
+            $histories = $this->historydata->sortByModel($order);
+        } else if ($order == 'modelAsc')
+        {
+            $histories = $this->historydata->sortByModel($order);
+        } else if ($order == 'modelA' || $order == 'modelB' || $order == 'modelC' || $order == 'modelM' || $order == 'modelR' || $order == 'modelW')
+        {
+            $histories = $this->historydata->filterByModel($order);
+        } else
+        {
+            $histories = $this->historydata->getAllTransaction();
         }
 
         $transactions = array();
