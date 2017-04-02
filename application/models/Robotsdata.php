@@ -33,21 +33,14 @@ class Robotsdata extends CI_Model
     public function getBot($which)
     {
         // iterate over the data until we find the one we want
-<<<<<<< HEAD
         foreach ($this->db->get('assembledbots')->result_array() as $record) {
             if ($record['id'] == $which) {
-=======
-        foreach ($this->bots as $record)
-        {
-            if ($record['id'] == $which)
-            {
->>>>>>> ef21bbc5ca8c564054ea35c7cfe807a22345e448
+
                 return $record;
             }
         }
         return null;
     }
-<<<<<<< HEAD
     
 	function size()
 	{
@@ -55,12 +48,10 @@ class Robotsdata extends CI_Model
 		return $query->num_rows();
 	}
 	
-    public function createBot($data) {
-=======
+   
 
     public function createBot($data)
     {
->>>>>>> ef21bbc5ca8c564054ea35c7cfe807a22345e448
         $this->db->insert('assembledbots', $data);
     }
 
