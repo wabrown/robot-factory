@@ -36,7 +36,7 @@ class Parts extends Application
             $this->generateTable($allParts);
         } else
         {
-            $this->data['pagetitle'] = 'Parts List - Only Allow to Worker';
+            $this->data['pagetitle'] = 'Parts List - Only Allow to Worker, Supervisor, Boss';
             $this->data['pagebody'] = 'blockedpage';
             $this->data['message'] = "<div></div>";
             $this->render();
@@ -183,16 +183,19 @@ class Parts extends Application
         $num_of_parts = count($array);
 
         $sequence = '';
+        $models = '';
         foreach ($array as $part)
         {
             $sequence .= $part['id'] . ' ';            
+            $models .= $part['model'] . $part['piece'] . ' ';
         }
-
+        
         $temp_array[] = array(
             'action' => $action,
-            'amount' => $amount,
+            'amount' => $amount,            
             'quantity' => $num_of_parts,
             'plant' => $part['plant'],
+            'model' => $models,
             'seq' => $sequence,
             'stamp' => $part['stamp']
         );
